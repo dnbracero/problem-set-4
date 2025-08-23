@@ -102,7 +102,8 @@ def nc() -> Path:
     df_edges = pd.DataFrame(rows)
 
     # Output the final dataframe to a CSV named 'network_centrality_{current_datetime}.csv' to `/data`
-    out_csv = DATA_DIR / f"network_centrality.csv"
+    timestamp = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
+    out_csv = DATA_DIR / f"network_centrality_{timestamp}.csv"
     df_edges.to_csv(out_csv, index=False)
     print(f"Exported edge list with weights to: {out_csv}")
 
