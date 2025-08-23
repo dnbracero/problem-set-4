@@ -2,9 +2,9 @@
 You will run this problem set from main.py, so set things up accordingly
 '''
 
-import part1_etl as etl
-import part2_network_centrality as nc
-import part3_similar_actors_genre as sag
+from src.part1_etl import etl
+from src.part2_network_centrality import nc
+from src.part3_similar_actors_genre import sag
 
 # Call functions / instanciate objects from the .py files
 def main():
@@ -13,9 +13,11 @@ def main():
 
     # PART 2: Call functions/instanciate objects for the network centrality analysis
     nc()
+    print('NC complete.')
 
     # PART 3: Call functions/instanciate objects for similar actors by genre
     sag()
+    print('SAG complete.')
 
 if __name__ == "__main__":
     main()
